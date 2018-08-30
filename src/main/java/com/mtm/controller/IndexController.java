@@ -17,6 +17,6 @@ public class IndexController {
 	@RequestMapping("/hello")
 	@ResponseBody
 	public String hello(){
-		return "hello";
+		return "hello worker"; 
 	}
 }
