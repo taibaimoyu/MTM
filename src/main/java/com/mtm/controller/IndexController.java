@@ -12,4 +12,11 @@ public class IndexController {
 	public String index(){
 		return "hello world! whatever hello";
 	}
+	
+	
+	@RequestMapping("/hello")
+	@ResponseBody
+	public String hello(){
+		return "hello";
+	}
 }
