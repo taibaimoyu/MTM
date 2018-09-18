@@ -6,17 +6,4 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class IndexController {
-	
-//	@RequestMapping("/")
-//	@ResponseBody
-//	public String index(){
-//		return "hello world! whatever hello";
-//	}
-//	
-//	
-//	@RequestMapping("/hello")
-//	@ResponseBody
-//	public String hello(){
-//		return "hello worker"; 
-//	}
 }
