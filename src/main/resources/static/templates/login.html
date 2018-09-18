@@ -2,30 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+  	<meta name="renderer" content="webkit">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/js/layui/css/layui.css"  media="all">
     <title>登陆</title>
 </head>
 <body>
-<h1>登陆</h1>
-<form method="post" action="/login">
-    <div>
-        用户名：<input type="text" name="username">
-    </div>
-    <div>
-        密码：<input type="password" name="password">
-    </div>
-    <div>
-        <input type="text" class="form-control" name="verifyCode" required="required" placeholder="验证码">
-        <img src="getVerifyCode" title="看不清，请点我" onclick="refresh(this)" onmouseover="mouseover(this)" />
-    </div>
-    <div>
-        <label><input type="checkbox" name="remember-me"/>自动登录</label>
-        <button type="submit">立即登陆</button>
-    </div>
-</form>
+<div  style="width: 650px; position: relative; left:35%; margin-top:10%">
+<div class="layui-row">
+	<form method="post" action="/login" class="layui-form">
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">用户名</label>
+	    <div class="layui-input-inline">
+	      <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">密码</label>
+	    <div class="layui-input-inline">
+	      <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">验证码</label>
+	    <div class="layui-input-inline">
+	      <input type="text" name="verifyCode" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+	      <img src="getVerifyCode" title="看不清，请点我" onclick="refresh(this)" onmouseover="mouseover(this)" />
+	    </div>
+	  </div>  
+	  <!-- 
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">记住我</label>
+	    <div class="layui-input-inline">
+	      <input type="checkbox" name="remember-me" lay-skin="switch" lay-text="ON|OFF" checked style="display:block" title="自动登录"/>
+	    </div>
+	  </div>
+	   -->
+	  <div class="layui-form-item">
+	    <div class="layui-input-block">
+	      <button class="layui-btn" lay-submit lay-filter="formDemo" type="submit">登录</button>
+	    </div>
+	  </div>
+ 	</form>
+</div>
+ </div>
 <script>
     function refresh(obj) { obj.src = "getVerifyCode?" + Math.random(); }
 
     function mouseover(obj) { obj.style.cursor = "pointer"; }
 </script>
+<script src="js/layui/layui.js"></script>
 </body>
 </html>
